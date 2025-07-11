@@ -1,0 +1,14 @@
+---
+- name: Configure Cisco Router
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Configure interface and banner
+      ios_config:
+        lines:
+          - interface GigabitEthernet0/1
+          - description Configured by AWX
+          - no shutdown
+          - exit
+          - banner motd ^Authorized Access Only!^
