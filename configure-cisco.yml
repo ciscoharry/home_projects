@@ -9,9 +9,4 @@
     - name: Disable paging
       ios_command:
         commands:
-          - terminal length 0
-
-    - name: Configure interface and banner
-      ios_config:
-        lines:
           - show run
