@@ -3,10 +3,10 @@
   gather_facts: no
   connection: network_cli
   collections:
-    - cisco.ios
+    - cisco.nxos
 
   tasks:
-    - name: Disable paging
-      ios_command:
+    - name: Run show run
+      nxos_command:
         commands:
-          - show run
+          - show running
