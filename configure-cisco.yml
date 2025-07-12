@@ -14,5 +14,4 @@
     - name: Configure interface and banner
       ios_config:
         lines:
-          - configure terminal
-          - banner motd ^Authorized Access Only!^
+          - show run
