@@ -1,6 +1,6 @@
 ---
 - name: Configure Cisco Router
-  hosts: all
+  hosts: 10.1.1.150
   gather_facts: no
   connection: network_cli              # Force network_cli connection for ios modules
   collections:
