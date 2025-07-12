@@ -1,12 +1,16 @@
----
 - name: Configure Cisco Router
-  hosts: 10.1.1.150
+  hosts: all
   gather_facts: no
-  connection: network_cli              # Force network_cli connection for ios modules
+  connection: network_cli
   collections:
-    - cisco.ios                      # Ensure the ios_config module is found
+    - cisco.ios
 
   tasks:
+    - name: Disable paging
+      ios_command:
+        commands:
+          - terminal length 0
+
     - name: Configure interface and banner
       ios_config:
         lines:
